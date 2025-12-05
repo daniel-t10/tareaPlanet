@@ -1,40 +1,39 @@
 package com.ejemplo.api.spring.planet;
 
-
-
-
-import java.math.BigDecimal;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "planet")
-@Getter
-@Setter
-
 public class PlanetEntity {
 
 	@Id
-	@Column (nullable = false, updatable=false, name="id")
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	@Column(length = 50, name="name")
-	private String nombre;
-	
-	@Column(name="radius_km")
-	private Integer radio;
-	
-	@Column(name = "mass_1e24kg")
-	private BigDecimal mass;
-	
-	@Column(name="has_rings")
-	private Boolean tieneAnillos;
+
+    @Column(name = "name")
+    private String nombre;
+
+    @Column(name = "radius_km")
+    private Integer radio;
+
+    @Column(name = "mass_1e24kg")
+    private Double masa;
+
+    @Column(name = "has_rings")
+    private Boolean tieneAnillos;
+
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public Integer getRadio() { return radio; }
+    public void setRadio(Integer radio) { this.radio = radio; }
+
+    public Double getMasa() { return masa; }
+    public void setMasa(Double masa) { this.masa = masa; }
+
+    public Boolean getTieneAnillos() { return tieneAnillos; }
+    public void setTieneAnillos(Boolean tieneAnillos) { this.tieneAnillos = tieneAnillos; }
 }

@@ -9,15 +9,20 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class PlanetDTO {
 
-	@NotNull
-	private Integer id;
-	
-	@Size(max= 45)
-	private String nombre;
-	private Integer radio;
-	private BigDecimal masa;
-	private Boolean tieneAnillos;
+    private Integer id; 
+
+    @NotNull
+    @Size(max = 45)
+    private String nombre;
+
+    @NotNull
+    private Integer radio;
+
+    @NotNull
+    private double masa;
+
+    @NotNull
+    private Boolean tieneAnillos;
 }
